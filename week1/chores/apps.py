@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ChoresConfig(AppConfig):
-    name = 'chores'
+    name = 'week1.chores'

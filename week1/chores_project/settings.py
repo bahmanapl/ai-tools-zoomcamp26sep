@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'chores_project.urls'
+ROOT_URLCONF = 'week1.chores_project.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chores_project.wsgi.application'
+WSGI_APPLICATION = 'week1.chores_project.wsgi.application'
 
 
 # Database

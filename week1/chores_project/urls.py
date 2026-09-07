@@ -9,6 +9,6 @@ def root_redirect(request):
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("chores/", include("chores.urls")),
+    path("chores/", include("week1.chores.urls")),
     path("", root_redirect),
 ]
