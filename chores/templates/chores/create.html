@@ -1,0 +1,14 @@
+{% extends "chores/base.html" %}
+
+{% block heading %}New chore{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div style="display:flex;gap:8px;margin-top:8px;">
+      <button type="submit" class="btn">Add chore</button>
+      <a class="btn secondary" href="{% url 'chores:list' %}">Cancel</a>
+    </div>
+  </form>
+{% endblock %}

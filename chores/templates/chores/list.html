@@ -1,0 +1,20 @@
+{% extends "chores/base.html" %}
+
+{% block content %}
+  {% if chores %}
+    <ul class="chore-list">
+      {% for chore in chores %}
+        <li class="chore-item {% if chore.status == 'done' %}done{% endif %}">
+          <form method="post" action="{% url 'chores:toggle' chore.pk %}" style="background:none;padding:0;margin:0;">
+            {% csrf_token %}
+            <input type="checkbox" onchange="this.form.submit()" {% if chore.status == 'done' %}checked{% endif %}>
+          </form>
+          <span class="title">{{ chore.title }}</span>
+          <span class="assignee">{{ chore.assigned_to.name }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="empty">No chores yet. <a href="{% url 'chores:create' %}">Add the first one →</a></p>
+  {% endif %}
+{% endblock %}
